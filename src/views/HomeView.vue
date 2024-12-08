@@ -38,7 +38,7 @@
         </div>
       </div>
       <ul class="rests__list grid">
-        <li class="rests__item" v-for="rest in restArray" :key="rest.id">
+        <li class="rests__item" v-for="rest in store.rests" :key="rest.id">
           <router-link :to="`/rest?id=${rest.id}`" class="rests__link">
             <img
               class="rests__item-image"
@@ -74,7 +74,7 @@
 </template>
 
 <script setup>
-import { restArray } from "../constans/rests";
+import { store } from "../store/index";
 const getUrl = (name) => {
   return new URL(`../assets/images/rests/${name}`, import.meta.url);
 };
